@@ -1,0 +1,156 @@
+
+.thumbnail{
+    width: 100%;
+}
+
+.video-title{
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 1000px){
+    .video-title{
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.video-author{
+    font-size: 12px;
+    color: rgb(96, 96, 96);
+    margin-bottom: 4px;
+}
+
+.video-stats{
+    font-size: 12px;
+    color: rgb(96, 96, 96);
+}
+
+@media (min-width: 1000px){
+    .video-author , .video-stats{
+        font-size: 14px;
+    }
+}
+
+.profile-picture{
+    width: 36px;
+    border-radius: 50px;
+}
+
+.thumbnail-row{
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.video-info-grid{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+
+.video-grid{
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 40px;
+
+}
+
+/*MEDIA QUERY*/
+
+
+
+/*IF OUR WEBSITE IF AROUND 0PX TO 600PX IT WILL BE SEE ON OUR WEBSITE 2 VIDEO GRID OR VIDEO PREVIEW*/
+@media (max-width: 600px) {
+    .video-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/*THIS IS DISREGARD I TRY TO DO THIS WHEN THIS IS FIRST ON MAX-WIDTH ON 600PX THIS IS DIDNT WORK THEN I TRY TO NEXT ON THAT THEN IT WORKS*/
+/*PARANG KAPAG ANG MAX WITH 500 AY NAUNA I CODE KESA SA 600PX ANG SUSUNDIN AY 600PX KAPAG ANG 600PX NAMAN ANG NAUNA I CODE GAGANA ANG 1FR 1FR THEN KAPAG NAHULI ANG CODE NA 500FX HINDI NA SIYA MAG OOVERRIDE GAGANA NA ANG 500PX 1FR*/
+@media (max-width: 500px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*THEN IF OUR WEBSITE IS AROUND 601PX AND 999PX IT WILL BE SEE ON OUR WEBSITE 3 VIDEO GRID OR VIDEO PREVIEW*/
+@media (min-width: 601px) and (max-width: 999px) {
+    .video-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/*LAST IF OUR WEBSITE IS AROUND 1000PX UP WE WILL SEE 4 VIDEO GRID OR VIDEO PREVIEW */
+@media (min-width: 1000px) {
+    .video-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.video-time{
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    right: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 4px 4px 2px;
+    border-radius: 2px;
+}
+
+.profile-tooltip{
+    width: 40px;
+    border-radius: 20px;
+}
+
+.profile-name-tooltip{
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-bottom: 3px;
+}
+
+.subs-tooltip{
+    font-size: 12px;
+    color: rgb(96, 96, 96);
+    white-space: nowrap;
+}
+
+.profile-tooltip-container{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    
+}
+
+.channel-picture{
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.channel-picture .profile-tooltip-container{
+    position: absolute;
+    background-color: rgb(228, 228, 228);
+    padding: 4px 8px 4px 8px;
+    height: 50px;
+    width: 180px;
+    top: 50px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    /*pointer-event none is when you hover the text of ex search-button is no opacity is only whent the icon is hover then we see the text*/
+    pointer-events: none;
+}
+
+.channel-picture:hover .profile-tooltip-container{
+    opacity: 1;
+}
